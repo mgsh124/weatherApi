@@ -1,0 +1,23 @@
+<h1>Weather Forecast</h1>
+<div
+  *ngFor="let item of data?.properties?.periods"
+  [ngStyle]="{ margin: '50px auto' }"
+>
+  <div [ngStyle]="{ display: 'flex' }">
+    <div [ngStyle]="{ width: '10%' }">
+      <img
+        [src]="item.icon"
+        [alt]="item.shortForecast"
+        [ngStyle]="{ width: '100%' }"
+      />
+    </div>
+    <div [ngStyle]="{ margin: '0 30px' }">
+      <p [ngStyle]="{ 'font-weight': 'bold', 'font-size': 'larger' }">
+        {{ item.name }}
+      </p>
+      <p>{{ item.shortForecast }}</p>
+      <p>Temperature: {{ item.temperature }} {{ item.temperatureUnit }}</p>
+      <p>{{ item.detailedForecast }}</p>
+    </div>
+  </div>
+</div>
